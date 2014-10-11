@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!--JQUERY-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+		<!--JQUERY UI-->
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+		<!--BOOTSTRAP-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+		<!--BOOTSTRAP MULTISELECT-->
+		<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+
+		<!--STYLE-->
+		<link rel="stylesheet" type="text/css" href="css/main-style.css"/>
+
+	</head>
+
+	<body>
+		
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1>Jump into the Sprint!</h1>
+				</div>
+			</div>
+
+			<!--TO-DO LIST START-->
+			<div class="row">
+
+				<!--TO DO-->
+				<div class="col-md-4 main">
+					<h3 class="text-center">TO DO</h3>
+
+					<ul id="to-do">
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Can be dropped..</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">..on an empty list</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 3</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 4</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 5</li>
+					</ul>
+					
+					<h4 class="text-center"><a href="#" id="new_task" class="text-center" data-toggle="modal" data-target="#new_task_modal">+ New Task</a></h4>
+				</div>
+
+				<!--IN PROGRESS-->
+				<div class="col-md-4 main">
+					<h3 class="text-center">IN PROGRESS</h3>
+
+					<ul id="in-progress">
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Can be dropped..</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">..on an empty list</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 3</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 4</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 5</li>
+					</ul>
+				</div>
+
+				<!--COMPLETED-->
+				<div class="col-md-4 main">
+					<h3 class="text-center">COMPLETED</h3>
+
+					<ul id="completed">
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Can be dropped..</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">..on an empty list</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 3</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 4</li>
+						<li class="ui-state-default" data-toggle="modal" data-target="#new_task_modal">Item 5</li>
+					</ul>
+				</div>
+
+			</div>
+
+
+			<!--SIGN UP MODAL-->
+			<div class="modal fade" id="new_task_modal" tabindex="-1" role="dialog" aria-labelledby="new_task_modal" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+
+			            <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+				            <h4 class="modal-title" id="myModalLabel">New Task</h4>
+			            </div>
+
+			            <form method="post" id="new_task_form">
+
+				            <div class="modal-body" id="new_task_form">
+				            	<label>Task Name</label><input type="text" class="form-control"/>
+				                <label>Task Description</label><textarea class="form-control"></textarea>
+				                <label class="text-center">Assigned To</label>
+				                <select multiple id="assigned_to" class="form-control" name="assignedTo">
+				                	<option>Kris</option>
+								  	<option>Patty</option>
+								  	<option>Carl</option>
+								  	<option>Oz</option>
+								  	<option>Reggie</option>
+				                </select>
+				            </div>
+
+				            <div class="modal-footer">
+				                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				                <button type="button" class="btn btn-primary">Submit</button>
+				        	</div>
+
+				        </form>
+
+			    	</div>
+			  	</div>
+			</div>
+
+		</div>
+	</body>
+</html>
+
+
+<script>
+$(function(){
+
+	//JQUERY UI SORTABLE
+	$('#to-do, #in-progress, #completed').sortable({
+		connectWith: "ul",
+	});
+
+	//BOOTSTRAP MULTISELECT
+	$('#new_task_form').find('[name="assignedTo"]').multiselect().end();
+
+    
+});
+</script>
+

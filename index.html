@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!--STYLE-->
-		<link rel="stylesheet" type="text/css" href="css/main-style.css"/>
 
 		<!--JQUERY-->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -11,16 +9,22 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
+		<!--STYLE-->
+		<link rel="stylesheet" type="text/css" href="css/main-style.css"/>
+
 	</head>
 
 	<body>
 		<!--JOINT SPRINT-->
-		<form class="container center_div" method="post" id="sign_in_form">
-			<h1 id="sign_in_header">Ready to Sprint!</h1>
-			<label>Join Sprint: <input type="text" class="form-control" placeholder="Enter sprint name"/></label>
-			<label>New Sprint: <input type="text" class="form-control" placeholder="Enter new sprint name"/></label>
+
+		<form class="center_div text-centered" method="post" id="join_sprint_form">
+			<h1 id="join_sprint_header">Ready to Sprint!</h1>
+			<label>Join Sprint: <input type="text" class="form-control" placeholder="Enter sprint name"/></label><br/>
+			<label>New Sprint: <input type="text" class="form-control" placeholder="Enter new sprint name"/></label><br/>
+			<label>Password: <input type="password" class="form-control" placeholder="Enter password"/></label>
 			<button class="btn btn-primary center-block">Sign In</button>
 		</form>
+				
 	</body>
 </html>
 

@@ -4,6 +4,11 @@
 
     $app.IndexController = Ember.Controller.extend({
 
+        sprintOptions : [   
+            Ember.Object.create({title: 'Create Sprint', value: 'create'}),
+            Ember.Object.create({title: 'Join Sprint', value: 'join'})
+        ],
+
         /**
          * @property actions
          * @type {Object}
@@ -15,16 +20,16 @@
              * @emit cherryPickName
              * @return {void}
              */
-            create_sprint: function() {
-                var sprint_name = this.get('new_sprint');
-                var password = this.get('new_password');
-                this.socket.emit('create_sprint', sprint_name, password);
-            },
 
             join_sprint: function() {
-                var sprint_name = this.get('join_sprint');
-                var password = this.get('join_password');
-                this.socket.emit('join_sprint', sprint_name, password);
+                var sprint_name = this.get('sprint_name');
+                var password = this.get('sprint_password');
+                var sprint_option = this.get('selected.value');
+                
+                if(sprint_option == "create")
+                    this.socket.emit('create_sprint', sprint_name, password);
+                else
+                    this.socket.emit('join_sprint', sprint_name, password);
             },
 
         },

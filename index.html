@@ -20,6 +20,11 @@
     	<script type="text/javascript" src="js/application.js"></script>
     	<script type="text/javascript" src="js/controller.js"></script>
 
+    	<!--BOOTSTRAP FOR EMBER-->
+		<script type="text/javascript" src="js/bs-core.min.js"></script>
+		<script type="text/javascript" src="js/bs-button.min.js"></script>
+		
+
 	</head>
 
 	<body>
@@ -30,8 +35,8 @@
 			<form class="center_div text-centered" method="post" id="join_sprint_form" {{action "join_sprint" on="submit"}}>
 				<h1 id="join_sprint_header">Ready to Sprint!</h1>
 				<div class="btn-group">
-					<button type="button" class="btn btn-default">Create Sprint</button>
-					<button type="button" class="btn btn-default">Join Sprint</button>
+					{{bs-btn-group contentBinding="sprintOptions" selectedBinding="selected"}}
+    				<br/>
 				</div><br/><br/>
 
 				<label>Sprint Name:{{input type="text" valueBinding="sprint_name" class="form-control" placeholder="Enter new sprint name"}}</label><br/>

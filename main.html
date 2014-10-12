@@ -21,20 +21,26 @@
 	</head>
 
 	<body>
+
+		<!--NAVBAR-->
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<label id="navbar_logo">SprintBoard</label>
+			<a data-toggle="modal" data-target="#choose_account_modal" id="navbar_user">Patty</a>
+		</nav>
 		
 		<div class="container">
 
 			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1>Jump into the Sprint!</h1>
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<h1 contenteditable="true" id="title">Jump into the Sprint!</h1>
 				</div>
 			</div>
 
 			<!--TO-DO LIST START-->
-			<div class="row">
+			<div class="row" id="main-row">
 
 				<!--TO DO-->
-				<div class="col-md-4 main">
+				<div class="col-md-4 main" id="to-do-col">
 					<h3 class="text-center">TO DO</h3>
 
 					<ul id="to-do">
@@ -49,7 +55,7 @@
 				</div>
 
 				<!--IN PROGRESS-->
-				<div class="col-md-4 main">
+				<div class="col-md-4 main" id="in-progress-col">
 					<h3 class="text-center">IN PROGRESS</h3>
 
 					<ul id="in-progress">
@@ -62,7 +68,7 @@
 				</div>
 
 				<!--COMPLETED-->
-				<div class="col-md-4 main">
+				<div class="col-md-4 main" id="completed-col">
 					<h3 class="text-center">COMPLETED</h3>
 
 					<ul id="completed">
@@ -113,6 +119,46 @@
 			  	</div>
 			</div>
 
+			<!--NAME MODAL-->
+			<div class="modal fade" id="choose_account_modal" tabindex="-1" role="dialog" aria-labelledby="choose_account_modal" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+
+			            <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+				            <h4 class="modal-title" id="myModalLabel">Choose User</h4>
+			            </div>
+
+			            <form method="post" id="new_task_form">
+
+				            <div class="modal-body" id="choose_user_form">
+
+				            	<label>Choose Existing User</label>
+				                <select id="assigned_to" class="form-control" name="assignedTo">
+				                	<option>Choose existing user</option>
+				                	<option>Kris</option>
+								  	<option>Patty</option>
+								  	<option>Carl</option>
+								  	<option>Oz</option>
+								  	<option>Reggie</option>
+				                </select>
+
+				                <p> - or - </p>
+
+				                <label>New User</label><input type="text" class="form-control"/>
+				            </div>
+
+				            <div class="modal-footer">
+				                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				                <button type="button" class="btn btn-primary">Submit</button>
+				        	</div>
+
+				        </form>
+
+			    	</div>
+			  	</div>
+			</div>
+
 		</div>
 	</body>
 </html>
@@ -124,6 +170,7 @@ $(function(){
 	//JQUERY UI SORTABLE
 	$('#to-do, #in-progress, #completed').sortable({
 		connectWith: "ul",
+		placeholder: "ui-state-highlight"
 	});
 
 	//BOOTSTRAP MULTISELECT

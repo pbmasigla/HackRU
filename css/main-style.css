@@ -19,10 +19,61 @@
 		margin-bottom:15px;
 	}
 
+/*NAVBAR*/
+	.navbar{
+		min-height:40px;
+		margin-bottom:15px;
+	}
+
+	#navbar_user{
+		float: right;
+		padding: 9px;
+		margin-right: 11px;
+		color: white;
+		font-size: 15px;
+	}
+
+	#navbar_logo{
+		font-size:21px;
+		color:white;
+		padding:2px;
+		margin-left:9px;
+		margin-top:1px;
+	}
+
+	#navbar_user:hover{
+		cursor:pointer;
+	}
+
+/*MODAL*/
+	.modal{
+		top:100px;
+	}
+
+	#choose_user_form > p{
+		text-align:center;
+	}
+
 /*MAIN PAGE*/
+	#title{
+		padding:5px;
+	}
+
 	.main{
-		height:500px;
-		border:solid 1px black;
+		height:450px;
+	}
+
+	#main-row{
+		margin-top:15px;
+	}
+
+	#to-do-col, #in-progress-col{
+		border-right:1px solid gray;
+	}
+
+	.ui-state-highlight { 
+		height: 2.7em; line-height: 2.7em; 
+		border: 2px dashed #dddddd;
 	}
 
 	ul#to-do, ul#in-progress, ul#completed{
@@ -36,15 +87,48 @@
 	}
 
 	ul#to-do > li, ul#in-progress > li, ul#completed > li{
-		margin: 5px; 
-		padding: 5px; 
+		margin: 10px; 
+		padding: 10px; 
 		font-size: 1.2em;
-		background: #eee; 
 	}
 
-	ul#to-do > li:hover, ul#in-progress > li:hover, ul#completed > li:hover{
-		background: white; 
+	ul#to-do > li:hover{
+		padding:8px;
+		background: #EFEFEF; 
 		cursor:pointer;
+		border-right: 2px dashed #E05151;
+		border-top: 2px dashed #E05151;
+		border-bottom: 2px dashed #E05151;
+	}
+
+	ul#in-progress > li:hover{
+		padding:8px;
+		background: #EFEFEF; 
+		cursor:pointer;
+		border-right: 2px dashed #FFD452;
+		border-top: 2px dashed #FFD452;
+		border-bottom: 2px dashed #FFD452;
+	}
+
+	ul#completed > li:hover{
+		padding:8px;
+		background: #EFEFEF; 
+		cursor:pointer;
+		border-right: 2px dashed #1FDA9A;
+		border-top: 2px dashed #1FDA9A;
+		border-bottom: 2px dashed #1FDA9A;
+	}
+
+	ul#to-do > li{
+		border-left:#E05151 5px solid;
+	}
+
+	ul#in-progress > li{
+		border-left:#FFD452 5px solid;
+	}
+
+	ul#completed > li{
+		border-left:#1FDA9A 5px solid;
 	}
 
 	select{

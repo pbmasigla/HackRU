@@ -25,11 +25,15 @@
                 var sprint_name = this.get('sprint_name');
                 var password = this.get('sprint_password');
                 var sprint_option = this.get('selected.value');
-                
-                if(sprint_option == "create")
-                    this.socket.emit('create_sprint', sprint_name, password);
-                else
-                    this.socket.emit('join_sprint', sprint_name, password);
+
+                if(sprint_option == null)
+                    alert('Please choose either "Join" or "Create" sprint');
+                else{
+                    if(sprint_option == "create")
+                        this.socket.emit('create_sprint', sprint_name, password);
+                    else
+                        this.socket.emit('join_sprint', sprint_name, password);
+                }
             },
 
         },

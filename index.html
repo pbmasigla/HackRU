@@ -35,13 +35,13 @@
 			<form class="center_div text-centered" method="post" id="join_sprint_form" {{action "join_sprint" on="submit"}}>
 				<h1 id="join_sprint_header">Ready to Sprint!</h1>
 				<div class="btn-group">
-					{{bs-btn-group contentBinding="sprintOptions" selectedBinding="selected"}}
+					{{bs-btn-group contentBinding="sprintOptions" selectedBinding="selected" required="required"}}
     				<br/>
 				</div><br/><br/>
 
-				<label>Sprint Name:{{input type="text" valueBinding="sprint_name" class="form-control" placeholder="Enter new sprint name"}}</label><br/>
+				<label>Sprint Name:{{input type="text" valueBinding="sprint_name" class="form-control" placeholder="Enter new sprint name" required="required"}}</label><br/>
 
-				<label>Password:{{input type="password" valueBinding="sprint_password" class="form-control" placeholder="Password for your sprint"}}</label>
+				<label>Password:{{input type="password" valueBinding="sprint_password" class="form-control" placeholder="Password for your sprint" required="required"}}</label>
 				<button class="btn btn-primary center-block">Submit</button>
 			</form>
 
